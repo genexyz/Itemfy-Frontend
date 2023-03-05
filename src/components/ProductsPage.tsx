@@ -2,6 +2,7 @@ import { type Product } from "../types";
 import { useState, useEffect } from "react";
 import { ProductCard } from "./Cards/ProductCard";
 import { Spinner } from "./Utils/Spinner";
+import { toast } from "react-toastify";
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL as string;
 
@@ -24,6 +25,7 @@ const ProductsPage = (): JSX.Element => {
           setProducts(data.products);
         } else {
           console.log("Error fetching products");
+          toast.error("Error fetching products");
         }
       } catch (error) {
         console.error("Error: ", error);
@@ -32,8 +34,6 @@ const ProductsPage = (): JSX.Element => {
     };
     void fetchData();
   }, []);
-
-  console.log(products);
 
   return (
     <div className="container mx-auto my-6 px-4">
