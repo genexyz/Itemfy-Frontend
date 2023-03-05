@@ -55,8 +55,8 @@ const Layout = (): JSX.Element => {
 
   return (
     <>
-      <AppBar position="static" color="secondary">
-        <Container maxWidth="xl">
+      <AppBar position="static">
+        <Container maxWidth="xl" className=" bg-gray-800">
           <Toolbar disableGutters>
             <CategoryIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Link to="/" component={RouterLink} color="inherit" underline="none">
@@ -73,7 +73,7 @@ const Layout = (): JSX.Element => {
                   textDecoration: "none",
                 }}
               >
-                PRODUCTS-APP
+                ITEMFY
               </Typography>
             </Link>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -104,6 +104,9 @@ const Layout = (): JSX.Element => {
                 sx={{
                   display: { xs: "block", md: "none" },
                 }}
+                classes={{
+                  paper: "dark-bg-menus",
+                }}
               >
                 <Link
                   to="/products"
@@ -111,7 +114,13 @@ const Layout = (): JSX.Element => {
                   color="inherit"
                   underline="none"
                 >
-                  <MenuItem key="products" onClick={handleCloseNavMenu}>
+                  <MenuItem
+                    key="products"
+                    onClick={handleCloseNavMenu}
+                    classes={{
+                      root: "dark-bg-menus-item",
+                    }}
+                  >
                     <Typography textAlign="center">Products</Typography>
                   </MenuItem>
                 </Link>
@@ -121,7 +130,13 @@ const Layout = (): JSX.Element => {
                   color="inherit"
                   underline="none"
                 >
-                  <MenuItem key="reviews" onClick={handleCloseNavMenu}>
+                  <MenuItem
+                    key="reviews"
+                    onClick={handleCloseNavMenu}
+                    classes={{
+                      root: "dark-bg-menus-item",
+                    }}
+                  >
                     <Typography textAlign="center">Reviews</Typography>
                   </MenuItem>
                 </Link>
@@ -144,7 +159,7 @@ const Layout = (): JSX.Element => {
                 }}
                 textAlign="center"
               >
-                PRODUCTS-APP
+                ITEMFY
               </Typography>
             </Link>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -158,6 +173,7 @@ const Layout = (): JSX.Element => {
                   key="products"
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
+                  className="dark-bg-menus-item"
                 >
                   Products
                 </Button>
@@ -167,6 +183,7 @@ const Layout = (): JSX.Element => {
                   key="reviews"
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
+                  className="dark-bg-menus-item"
                 >
                   Reviews
                 </Button>
@@ -190,6 +207,9 @@ const Layout = (): JSX.Element => {
                   vertical: "top",
                   horizontal: "right",
                 }}
+                classes={{
+                  paper: "dark-bg-menus",
+                }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
@@ -201,7 +221,13 @@ const Layout = (): JSX.Element => {
                     color="inherit"
                     underline="none"
                   >
-                    <MenuItem key="signin" onClick={handleCloseUserMenu}>
+                    <MenuItem
+                      key="signin"
+                      onClick={handleCloseUserMenu}
+                      classes={{
+                        root: "dark-bg-menus-item",
+                      }}
+                    >
                       <Typography textAlign="center">Sign in</Typography>
                     </MenuItem>
                   </Link>
@@ -213,13 +239,25 @@ const Layout = (): JSX.Element => {
                     color="inherit"
                     underline="none"
                   >
-                    <MenuItem key="signup" onClick={handleCloseUserMenu}>
+                    <MenuItem
+                      key="signup"
+                      onClick={handleCloseUserMenu}
+                      classes={{
+                        root: "dark-bg-menus-item",
+                      }}
+                    >
                       <Typography textAlign="center">Sign up</Typography>
                     </MenuItem>
                   </Link>
                 )}
                 {user && (
-                  <MenuItem key="signout" onClick={logoutUser}>
+                  <MenuItem
+                    key="signout"
+                    onClick={logoutUser}
+                    classes={{
+                      root: "dark-bg-menus-item",
+                    }}
+                  >
                     <Typography textAlign="center">Sign out</Typography>
                   </MenuItem>
                 )}

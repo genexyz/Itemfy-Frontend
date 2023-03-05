@@ -9,4 +9,15 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(17 24 39) !important;
+  color: #fff !important;
+}
+
+.dark-bg-menus {
+  background-color: rgb(31 41 55) !important;
+  color: #fff !important;
+}
+
+.dark-bg-menus-item:hover {
+  background-color: rgb(55 65 81) !important;
 }
