@@ -4,7 +4,7 @@ In this platform users can create, view and review Products.
 
 ## How to set up the app locally
 
-1.  Install the required dependecies
+1.  Install the required dependencies
 
 ```
 npm install
@@ -35,11 +35,11 @@ https://itemfy-frontend.vercel.app/
 ```
 
 The deployment is already connected to the deployed server, so testing can be made easily.
-If you have any error to set up the local enviroment, feel free to test the client in the deployed url.
+If you have any errors when setting up the local environment, feel free to test the client in the deployed URL.
 
 ### Users to test
 
-To test the app you can use the followed users, which are already loaded in the cloud database. Or you can create your own.
+To test the app you can use the following users, which are already loaded in the cloud database. Or you can create your own.
 
 ```
 test@example.com - password1$
@@ -52,13 +52,13 @@ test3@example.com - password1$
 
 - Sign in & Sign up & Sign out (JWT)
 - Create a product
-- List products with number of reviews
+- List products with the number of reviews
 - View details of a single product
 - Create a review of a product
 - List reviews with data of the product
 - View details of a review and its associated product
 
-A lot of improvements could be made to the current state of the app, but i limited to the core functionalities needed.
+A lot of improvements could be made to the current state of the app, but I limited to the core functionalities needed.
 
 ### Functionalities
 
