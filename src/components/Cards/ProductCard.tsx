@@ -10,7 +10,7 @@ export const ProductCard = ({ product }: { product: Product }): JSX.Element => {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
               {product.title}
             </h5>
-            <p className="h-20 overflow-scroll font-normal text-gray-400">
+            <p className="max-h-32 overflow-scroll font-normal text-gray-400">
               {product.description}
             </p>
           </div>
@@ -19,7 +19,7 @@ export const ProductCard = ({ product }: { product: Product }): JSX.Element => {
               ${product.price.toFixed(2)}
             </div>
             <div className="text-base text-gray-400">
-              {product.reviews.length} reviews
+              {product.reviews !== undefined ? product.reviews.length : 0} reviews
             </div>
           </div>
         </div>

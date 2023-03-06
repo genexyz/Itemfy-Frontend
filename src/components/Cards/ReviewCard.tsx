@@ -18,7 +18,7 @@ export const ReviewCard = ({ review }: { review: SingleReview }): JSX.Element =>
               className="mt-2"
             />
           </div>
-          <p className="h-32 overflow-scroll font-normal text-gray-400">{comment}</p>
+          <p className="max-h-36 overflow-scroll font-normal text-gray-400">{comment}</p>
         </div>
       </Link>
     </div>

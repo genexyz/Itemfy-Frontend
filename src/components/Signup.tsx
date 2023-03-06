@@ -22,7 +22,7 @@ const MIN_PASSWORD_LENGTH = 8;
 const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 const SERVER_URL = import.meta.env.VITE_SERVER_URL as string;
 
-interface User {
+interface UserErrors {
   email?: string;
   password?: string;
   name?: string;
@@ -34,7 +34,7 @@ const Signup = (): JSX.Element => {
     password: "",
     name: "",
   });
-  const [errors, setErrors] = useState<User>({});
+  const [errors, setErrors] = useState<UserErrors>({});
   const navigate = useNavigate();
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -44,17 +44,17 @@ const Signup = (): JSX.Element => {
       [name]: value,
     }));
 
-    if (errors[name as keyof User] != null)
+    if (errors[name as keyof UserErrors] != null)
       setErrors({
         ...errors,
         [name]: null,
       });
   };
 
-  const findFormErrors = (): User => {
+  const findFormErrors = (): UserErrors => {
     const { email, password, name } = user;
 
-    const newErrors: User = {};
+    const newErrors: UserErrors = {};
     if (email === "") newErrors.email = "Email is required";
     if (email.length === 0) newErrors.email = "Email is required";
     else if (!EMAIL_REGEX.test(email)) newErrors.email = "Invalid email address";
